@@ -5,7 +5,7 @@ import { ClientConfig } from './types';
 
 export default function useTrackstarLink(config: ClientConfig) {
   const [loading, error] = useScript({
-    src: "https://grand-frangipane-6db409.netlify.app/main.js",
+    src: "https://link.trackstarhq.com/main.js",
     checkForExisting: true,
   });
 

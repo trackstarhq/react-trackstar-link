@@ -23,14 +23,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vesselapi/react-vessel.git"
+    "url": "git+https://github.com/trackstarhq/react-trackstar-link.git"
   },
-  "author": "vessel",
+  "author": "trackstarhq",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/vesselapi/react-vessel/issues"
+    "url": "https://github.com/trackstarhq/react-trackstar-link/issues"
   },
-  "homepage": "https://github.com/vesselapi/react-vessel#readme",
+  "homepage": "https://github.com/trackstarhq/react-trackstar-link#readme",
   "devDependencies": {
     "@babel/core": "^7.17.5",
     "@babel/preset-env": "^7.16.11",
@@ -72,7 +72,7 @@
   },
   "tags": [
     "react",
-    "vessel"
+    "trackstarhq"
   ],
   "dependencies": {
     "react-script-hook": "^1.6.0"

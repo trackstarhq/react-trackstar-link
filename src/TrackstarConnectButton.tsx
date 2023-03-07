@@ -11,7 +11,7 @@ type TrackstarConnectButtonProps = {
 } & ClientConfig;
 
 export default function TrackstarConnectButton({
-  children = 'Connect CRM',
+  children = 'Connect WMS',
   style,
   className,
   getLinkToken,

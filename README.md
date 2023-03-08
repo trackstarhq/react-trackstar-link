@@ -10,13 +10,13 @@
 _npm_:
 
 ```bash
-npm install @trackstarapi/react-trackstar-link
+npm install @trackstar/react-trackstar-link
 ```
 
 _yarn_:
 
 ```bash
-yarn add @trackstarapi/react-trackstar-link
+yarn add @trackstar/react-trackstar-link
 ```
 
 ### Usage

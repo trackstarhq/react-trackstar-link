@@ -33,7 +33,7 @@ function App() {
   return (
     <TrackstarConnectButton
       getLinkToken={async () => await api.post('link/token')}
-      onSuccess={(publicToken) => console.log('public token: ', publicToken)}
+      onSuccess={(authCode, integrationName) => console.log('authCode token: ', authCode, 'integrationName :', integrationName)}
       onClose={() => console.log('closed')}
       onLoad={() => console.log('loaded')}
     >
@@ -46,7 +46,7 @@ function App() {
 ```js
 function App() {
   const { open } = useTrackstarLink({
-    onSuccess: (publicToken) => console.log('public token: ', publicToken),
+    onSuccess: (authCode, integrationName) => console.log('authCode token: ', authCode, 'integrationName: ', integrationName),
     onClose: () => console.log('closed'),
     onLoad: () => console.log('loaded'),
   });
@@ -56,5 +56,4 @@ function App() {
 ```
 
 ### Issues/Questions
-
 Contact us at `support@trackstarhq.com`.

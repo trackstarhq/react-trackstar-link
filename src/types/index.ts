@@ -1,5 +1,5 @@
 export interface ClientConfig {
-  onSuccess: (publicToken: string) => void;
+  onSuccess: (authCode: string, integrationName: string) => void;
   onClose?: () => void;
   onLoad?: () => void;
 }

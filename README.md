@@ -55,45 +55,6 @@ function App() {
 }
 ```
 
-If you'd like to directly open to the auth flow for a specific integration without having the user go through the selection flow, you can pass an `integrationId` to the open function returned by `useTrackstarLink`. Currently, this is only supported when using the `useTrackstarLink` hook.
-
-Here's an example of embedding the integrations directly into your application:
-
-```jsx
-function App() {
-  const { open } = useTrackstarLink({
-    onSuccess: (publicToken) => console.log('public token: ', publicToken),
-    onClose: () => console.log('closed'),
-    onLoad: () => console.log('loaded'),
-  });
-
-  return (
-    <div>
-      <button
-        onClick={async () =>
-          open({
-            integrationId: 'shipBob',
-            linkToken: await getLinkToken(),
-          })
-        }
-      >
-        Connect ShipBob
-      </button>
-      <button
-        onClick={async () =>
-          open({
-            integrationId: 'shipHero',
-            linkToken: await getLinkToken(),
-          })
-        }
-      >
-        Connect ShipHero
-      </button>
-    </div>
-  );
-}
-```
-
 ### Issues/Questions
 
 Contact us at `support@trackstarhq.com`.

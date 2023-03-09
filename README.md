@@ -37,7 +37,7 @@ function App() {
       onClose={() => console.log('closed')}
       onLoad={() => console.log('loaded')}
     >
-      Connect your CRM!
+      Connect your WMS!
     </TrackstarConnectButton>
   );
 }
@@ -51,7 +51,7 @@ function App() {
     onLoad: () => console.log('loaded'),
   });
 
-  return <button onClick={() => open({ linkToken })}>Connect your CRM!</button>;
+  return <button onClick={() => open({})}>Connect your WMS!</button>;
 }
 ```
 

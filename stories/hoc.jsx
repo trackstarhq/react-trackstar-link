@@ -8,7 +8,6 @@ function App() {
     console.log('onLoad', eventName, metadata);
   const onSuccess = (token, metadata) =>
     console.log('onSuccess', token, metadata);
-
   return (
     <TrackstarConnectButton
       className="CustomButton"

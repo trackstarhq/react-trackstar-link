@@ -33,7 +33,7 @@ function App() {
   return (
     <TrackstarConnectButton
       getLinkToken={async () => await api.post('link/token')}
-      onSuccess={(authCode, integrationName) => console.log('authCode token: ', authCode, 'integrationName :', integrationName)}
+      onSuccess={(authCode) => console.log('authCode token: ', authCode)}
       onClose={() => console.log('closed')}
       onLoad={() => console.log('loaded')}
     >

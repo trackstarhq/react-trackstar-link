@@ -2,11 +2,13 @@ export interface ClientConfig {
   onSuccess: (authCode: string, integrationName: string) => void;
   onClose?: () => void;
   onLoad?: () => void;
+  getLinkToken: () => Promise<string>;
 }
 
 export interface TrackstarConfig {
   onClose?: () => void;
   onLoad?: () => void;
+  getLinkToken: () => Promise<string>;
 }
 
 interface TrackstarState {
@@ -17,10 +19,8 @@ export interface Trackstar {
   init: (options: TrackstarConfig) => void;
   open: ({
     integrationId,
-    linkToken, // Token used to verify user's account.
   }: {
     integrationId?: string;
-    linkToken: string;
   }) => void;
   state: TrackstarState;
 }

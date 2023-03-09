@@ -7,19 +7,14 @@ type TrackstarConnectButtonProps = {
   children?: React.ReactNode;
   style?: React.CSSProperties;
   className?: string;
-  getLinkToken: () => Promise<string>; // Retrieves and returns a linkToken
 } & ClientConfig;
 
 export default function TrackstarConnectButton({
   children = 'Connect WMS',
   style,
   className,
-  getLinkToken,
   ...config
 }: TrackstarConnectButtonProps) {
-  if (!getLinkToken) {
-    throw new Error('Prop `getLinkToken` callback must be present.');
-  }
   const { error, open } = useTrackstarLink(config);
 
   return (
@@ -36,7 +31,7 @@ export default function TrackstarConnectButton({
         cursor: 'pointer',
         ...style,
       }}
-      onClick={async () => open({ linkToken: await getLinkToken() })}
+      onClick={async () => open({})}
     >
       {children}
     </button>

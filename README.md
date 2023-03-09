@@ -30,14 +30,32 @@ Here are some example uses of each:
 
 ```jsx
 function App() {
+
+  const someCustomerId = "12345";
   return (
     <TrackstarConnectButton
-      getLinkToken={async () => await api.post('link/token')}
-      onSuccess={(authCode) => console.log('authCode token: ', authCode)}
+      getLinkToken={async () => {
+        const response = await fetch('https://my-company.backend.com/link-token',
+          {
+            method: 'POST',
+          }
+        );
+        const { linkToken } = await response.json();
+        return linkToken;
+      }}
+      onSuccess={(authCode) => 
+        await fetch('https://my-company.backend.com/store-token', {
+          method: 'POST',
+          body: JSON.stringify({
+            customer_id: someCustomerId,
+            auth_code: authCode,
+          }),
+        })
+      }
       onClose={() => console.log('closed')}
       onLoad={() => console.log('loaded')}
     >
-      Connect your WMS!
+      Connect your WMS
     </TrackstarConnectButton>
   );
 }

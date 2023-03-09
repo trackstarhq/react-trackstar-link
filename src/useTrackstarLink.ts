@@ -17,15 +17,14 @@ export default function useTrackstarLink(config: ClientConfig) {
           config.onLoad && config.onLoad();
         },
         onClose: () => config.onClose && config.onClose(),
+        getLinkToken: () => config.getLinkToken && config.getLinkToken(),
       });
     }
   }, [loading]);
 
   const open = ({
-    linkToken,
     integrationId,
   }: {
-    linkToken: string;
     integrationId?: string;
   }) => {
     if (error) {
@@ -40,7 +39,7 @@ export default function useTrackstarLink(config: ClientConfig) {
       return;
     }
     // Open modal
-    window.Trackstar.open({ integrationId, linkToken });
+    window.Trackstar.open({ integrationId });
   };
 
   return {

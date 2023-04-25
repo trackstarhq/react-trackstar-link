@@ -2,8 +2,7 @@
 
 ### This package provides:
 
-1. A [React](https://reactjs.org/) button component that launches the [Trackstar](https://www.trackstarhq.com/) connect modal.
-2. A Hook that can be used to launch the modal manually.
+A [React](https://reactjs.org/) button component that launches the [Trackstar](https://www.trackstarhq.com/) connect modal.
 
 ### Installing:
 

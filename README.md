@@ -23,6 +23,8 @@ yarn add @trackstar/react-trackstar-link
 The `trackstar-link` modal can be triggered using the `TrackstarConnectButton` component.
 
 ```jsx
+import { TrackstarConnectButton } from '@trackstar/react-trackstar-link';
+
 function App() {
 
   const someCustomerId = "12345";

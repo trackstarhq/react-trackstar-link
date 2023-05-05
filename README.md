@@ -76,7 +76,7 @@ Integration strings that can be used in these props are:
 - shiphero
 - shipstream
 - skusavvy
-- skuvalut
+- skuvault
 
 ### Issues/Questions
 Contact us at `support@trackstarhq.com`.

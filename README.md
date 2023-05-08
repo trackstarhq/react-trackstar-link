@@ -67,16 +67,7 @@ To show all integrations *except* ShipBob and Ongoing use
 integrationBlockList={['shipbob', 'ongoing']}
 ```
 The `integrationAllowList` and `integrationBlockList` props are mutually exclusive. If both props are given values, all integrations will be displayed.
-Integration strings that can be used in these props are:
-- extensiv-3pl-central
-- fba
-- infoplus
-- ongoing
-- shipbob
-- shiphero
-- shipstream
-- skusavvy
-- skuvault
+Integration IDs that can be used in these props can be found in the table here: https://docs.trackstarhq.com/introduction#warehouse-management-systems
 
 ### Issues/Questions
 Contact us at `support@trackstarhq.com`.

@@ -3,12 +3,16 @@ export interface ClientConfig {
   onClose?: () => void;
   onLoad?: () => void;
   getLinkToken: () => Promise<string>;
+  integrationAllowList?: string[];
+  integrationBlockList?: string[];
 }
 
 export interface TrackstarConfig {
   onClose?: () => void;
   onLoad?: () => void;
   getLinkToken: () => Promise<string>;
+  integrationAllowList?: string[];
+  integrationBlockList?: string[];
 }
 
 interface TrackstarState {

@@ -2,8 +2,7 @@
 
 ### This package provides:
 
-1. A [React](https://reactjs.org/) button component that launches the [Trackstar](https://www.trackstarhq.com/) connect modal.
-2. A Hook that can be used to launch the modal manually.
+A [React](https://reactjs.org/) button component that launches the [Trackstar](https://www.trackstarhq.com/) connect modal.
 
 ### Installing:
 
@@ -24,6 +23,8 @@ yarn add @trackstar/react-trackstar-link
 The `trackstar-link` modal can be triggered using the `TrackstarConnectButton` component.
 
 ```jsx
+import { TrackstarConnectButton } from '@trackstar/react-trackstar-link';
+
 function App() {
 
   const someCustomerId = "12345";
@@ -55,6 +56,27 @@ function App() {
   );
 }
 ```
+
+Use optional `integrationAllowList` and `integrationBlockList` props to determine the specific integrations to display. Both props take an string array of integration names.
+To only show ShipBob and Ongoing integrations use
+```jsx
+integrationAllowList={['shipbob', 'ongoing']}
+```
+To show all integrations *except* ShipBob and Ongoing use
+```jsx
+integrationBlockList={['shipbob', 'ongoing']}
+```
+The `integrationAllowList` and `integrationBlockList` props are mutually exclusive. If both props are given values, all integrations will be displayed.
+Integration strings that can be used in these props are:
+- extensiv-3pl-central
+- fba
+- infoplus
+- ongoing
+- shipbob
+- shiphero
+- shipstream
+- skusavvy
+- skuvault
 
 ### Issues/Questions
 Contact us at `support@trackstarhq.com`.

@@ -56,6 +56,7 @@ function App() {
   );
 }
 ```
+### Optional Props
 
 Use optional `integrationAllowList` and `integrationBlockList` props to determine the specific integrations to display. Both props take an string array of integration names.
 To only show ShipBob and Ongoing integrations use
@@ -68,6 +69,9 @@ integrationBlockList={['shipbob', 'ongoing']}
 ```
 The `integrationAllowList` and `integrationBlockList` props are mutually exclusive. If both props are given values, all integrations will be displayed.
 Integration IDs that can be used in these props can be found in the table here: https://docs.trackstarhq.com/introduction#warehouse-management-systems
+
+Set the `sandbox` prop to `true` to include a sandbox WMS in the list of integrations. This is useful for testing.
+
 
 ### Issues/Questions
 Contact us at `support@trackstarhq.com`.

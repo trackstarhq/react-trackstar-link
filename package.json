@@ -60,10 +60,6 @@
     "ts-loader": "9.4.4",
     "typescript": "5.1.6"
   },
-  "peerDependencies": {
-    "react": "16.8.0 || 17.0.2 || 18.0.0",
-    "react-dom": "16.8.0 || 17.0.2 || 18.0.0"
-  },
   "tags": [
     "react",
     "trackstarhq"

@@ -2,12 +2,16 @@
   "name": "@trackstar/react-trackstar-link",
   "version": "1.1.7",
   "description": "A React component to open the Trackstar Connect Modal",
+  "type": "module",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "jsnext:main": "dist/index.esm.js",
   "browser": "dist/index.umd.js",
   "types": "dist/index.d.ts",
   "registry": "https://registry.npmjs.org",
+  "exports": {
+    ".": "./dist/index.js"
+  },
   "files": [
     "dist/*"
   ],
@@ -33,12 +37,12 @@
     "@babel/core": "^7.17.5",
     "@babel/preset-env": "^7.16.11",
     "@babel/preset-react": "^7.16.7",
-    "@rollup/plugin-babel": "^5.3.1",
-    "@rollup/plugin-commonjs": "^21.0.2",
-    "@rollup/plugin-node-resolve": "^13.1.3",
+    "@rollup/plugin-babel": "^6.0.3",
+    "@rollup/plugin-commonjs": "^25.0.3",
+    "@rollup/plugin-node-resolve": "^15.1.0",
     "@types/react": "^18.0.1",
     "@types/react-dom": "^18.0.0",
-    "babel-loader": "^8.2.3",
+    "babel-loader": "^9.1.3",
     "eslint": "^8.10.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-prettier": "^8.5.0",
@@ -50,12 +54,12 @@
     "prettier": "^2.5.1",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
-    "rollup": "^2.70.1",
+    "rollup": "^3.26.3",
     "rollup-plugin-peer-deps-external": "^2.2.4",
-    "rollup-plugin-terser": "^7.0.2",
-    "rollup-plugin-ts": "^2.0.5",
+    "@rollup/plugin-terser": "^0.4.3",
+    "rollup-plugin-ts": "^3.2.0",
     "ts-loader": "^9.2.8",
-    "typescript": "^4.6.2"
+    "typescript": "5.1.6"
   },
   "peerDependencies": {
     "react": "^16.8.0 || ^17.0.2 || ^18.0.0",
@@ -66,6 +70,7 @@
     "trackstarhq"
   ],
   "dependencies": {
+    "depcheck": "^1.4.3",
     "react-script-hook": "^1.6.0"
   }
 }

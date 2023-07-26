@@ -1,17 +1,20 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import useScript from 'react-script-hook';
 
 import { ClientConfig } from './types';
 
 export default function useTrackstarLink(config: ClientConfig) {
   const [loading, error] = useScript({
-    src: "https://link.trackstarhq.com/main.js",
+    src: "https://frolicking-arithmetic-1c197f.netlify.app/main.js",
     checkForExisting: true,
   });
+  const [trackstarWindowId, setTrackstarWindowId] = useState("");
 
   useEffect(() => {
-    if (window.Trackstar) {
-      window.Trackstar.init({
+    const trackstarWindowId = window.TrackstarWindowId;
+    setTrackstarWindowId(trackstarWindowId);
+    if (window[trackstarWindowId]) {
+      window[trackstarWindowId].init({
         ...config,
         onLoad: () => {
           config.onLoad && config.onLoad();
@@ -30,16 +33,16 @@ export default function useTrackstarLink(config: ClientConfig) {
     if (error) {
       throw new Error(`Error loading Trackstar script: ${error}`);
     }
-    if (!window.Trackstar) {
+    if (!window[trackstarWindowId]) {
       console.error('Trackstar is not initialized');
       return;
     }
-    if (!window.Trackstar.state?.isLoaded) {
+    if (!window[trackstarWindowId].state?.isLoaded) {
       console.error('Trackstar has not been loaded, did you call Trackstar.init()?');
       return;
     }
     // Open modal
-    window.Trackstar.open({ integrationId });
+    window[trackstarWindowId].open({ integrationId });
   };
 
   return {

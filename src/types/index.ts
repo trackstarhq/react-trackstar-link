@@ -28,5 +28,7 @@ export interface Trackstar {
 declare global {
   interface Window {
     Trackstar: Trackstar;
+    TrackstarWindowId: string;
+    [trackstarWindowId:string]: Trackstar;
   }
 }

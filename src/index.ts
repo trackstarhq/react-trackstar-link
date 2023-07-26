@@ -1,5 +1,2 @@
-import TrackstarConnectButton from "./TrackstarConnectButton";
-import useTrackstarLink from "./useTrackstarLink";
-
-export { TrackstarConnectButton };
-export {  useTrackstarLink };
+export { default as TrackstarConnectButton } from "./TrackstarConnectButton";
+export { default as useTrackstarLink } from "./useTrackstarLink";

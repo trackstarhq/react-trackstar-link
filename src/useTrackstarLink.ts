@@ -8,7 +8,7 @@ export default function useTrackstarLink(config: ClientConfig) {
     src: "https://frolicking-arithmetic-1c197f.netlify.app/main.js",
     checkForExisting: true,
   });
-  const trackstarModalId = config.buttonId ? "Trackstar" + config.buttonId : "Trackstar" + 0;
+  const trackstarModalId = config.hasOwnProperty("buttonId") ? "Trackstar" + config.buttonId : "Trackstar";
 
   useEffect(() => {
     if (window.Trackstar) {

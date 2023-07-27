@@ -8,13 +8,11 @@ export default function useTrackstarLink(config: ClientConfig) {
     src: "https://frolicking-arithmetic-1c197f.netlify.app/main.js",
     checkForExisting: true,
   });
-  const [trackstarWindowId, setTrackstarWindowId] = useState("");
+  const trackstarModalId = config.keyId ? "Trackstar" + config.keyId : "Trackstar" + 0;
 
   useEffect(() => {
-    const trackstarWindowId = window.TrackstarWindowId;
-    setTrackstarWindowId(trackstarWindowId);
-    if (window[trackstarWindowId]) {
-      window[trackstarWindowId].init({
+    if (window.Trackstar) {
+      window.Trackstar.init({
         ...config,
         onLoad: () => {
           config.onLoad && config.onLoad();
@@ -33,16 +31,16 @@ export default function useTrackstarLink(config: ClientConfig) {
     if (error) {
       throw new Error(`Error loading Trackstar script: ${error}`);
     }
-    if (!window[trackstarWindowId]) {
+    if (!window[trackstarModalId]) {
       console.error('Trackstar is not initialized');
       return;
     }
-    if (!window[trackstarWindowId].state?.isLoaded) {
+    if (!window[trackstarModalId].state?.isLoaded) {
       console.error('Trackstar has not been loaded, did you call Trackstar.init()?');
       return;
     }
     // Open modal
-    window[trackstarWindowId].open({ integrationId });
+    window[trackstarModalId].open({ integrationId });
   };
 
   return {

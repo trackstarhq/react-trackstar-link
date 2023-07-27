@@ -3,7 +3,7 @@ export interface ClientConfig {
   onClose?: () => void;
   onLoad?: () => void;
   getLinkToken: () => Promise<string>;
-  keyId?: number;
+  buttonId?: number;
 }
 
 export interface TrackstarConfig {

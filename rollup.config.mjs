@@ -42,11 +42,13 @@ export default [
         format: 'umd',
         globals: {
           react: 'React',
+          'react-dom': 'ReactDOM',
         },
       },
     ],
     plugins: [
       ts(),
+      peerDepsExternal(),
       resolve({
         extensions: EXTENSIONS,
       }),

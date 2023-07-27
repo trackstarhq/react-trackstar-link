@@ -53,8 +53,6 @@
     "eslint-plugin-react": "7.33.0",
     "eslint-plugin-react-hooks": "4.6.0",
     "prettier": "3.0.0",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
     "rollup": "3.26.3",
     "rollup-plugin-peer-deps-external": "2.2.4",
     "rollup-plugin-ts": "3.2.0",
@@ -65,8 +63,8 @@
     "react-script-hook": "1.7.2"
   },
   "peerDependencies": {
-    "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "tags": [
     "react",

@@ -5,7 +5,7 @@ import { ClientConfig } from './types';
 
 export default function useTrackstarLink(config: ClientConfig) {
   const [loading, error] = useScript({
-    src: "https://frolicking-arithmetic-1c197f.netlify.app/main.js",
+    src: "https://link.trackstarhq.com/main.js",
     checkForExisting: true,
   });
   const trackstarModalId = config.hasOwnProperty("buttonId") ? "Trackstar" + config.buttonId : "Trackstar";

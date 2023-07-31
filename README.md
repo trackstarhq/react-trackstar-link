@@ -72,6 +72,8 @@ Integration IDs that can be used in these props can be found in the table here: 
 
 Set the `sandbox` prop to `true` to include a sandbox WMS in the list of integrations. This is useful for testing.
 
+Use the `buttonId` prop to use multiple instances of `<TrackstarConnectButton`. This is useful to have several buttons with different `integrationAllowList`'s to display. Each `<TrackstarConnectButton` will need its own unique string for `buttonId`.
+
 
 ### Issues/Questions
 Contact us at `support@trackstarhq.com`.

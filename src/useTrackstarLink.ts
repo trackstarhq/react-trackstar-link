@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import useScript from 'react-script-hook';
 
 import { ClientConfig } from './types';
@@ -8,6 +8,7 @@ export default function useTrackstarLink(config: ClientConfig) {
     src: "https://link.trackstarhq.com/main.js",
     checkForExisting: true,
   });
+  const trackstarModalId = config.hasOwnProperty("buttonId") ? "Trackstar" + config.buttonId : "Trackstar";
 
   useEffect(() => {
     if (window.Trackstar) {
@@ -30,16 +31,16 @@ export default function useTrackstarLink(config: ClientConfig) {
     if (error) {
       throw new Error(`Error loading Trackstar script: ${error}`);
     }
-    if (!window.Trackstar) {
+    if (!window[trackstarModalId]) {
       console.error('Trackstar is not initialized');
       return;
     }
-    if (!window.Trackstar.state?.isLoaded) {
+    if (!window[trackstarModalId].state?.isLoaded) {
       console.error('Trackstar has not been loaded, did you call Trackstar.init()?');
       return;
     }
     // Open modal
-    window.Trackstar.open({ integrationId });
+    window[trackstarModalId].open({ integrationId });
   };
 
   return {

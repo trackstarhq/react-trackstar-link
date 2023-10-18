@@ -3,6 +3,8 @@ export interface ClientConfig {
   onClose?: () => void;
   onLoad?: () => void;
   getLinkToken: () => Promise<string>;
+  integrationAllowList?: string[];
+  integrationBlockList?: string[];
   buttonId?: string;
 }
 
@@ -29,6 +31,6 @@ export interface Trackstar {
 declare global {
   interface Window {
     Trackstar: Trackstar;
-    [trackstarModalId:string]: Trackstar;
+    [trackstarModalId: string]: Trackstar;
   }
 }

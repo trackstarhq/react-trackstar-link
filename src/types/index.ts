@@ -6,12 +6,7 @@ export interface ClientConfig {
   integrationAllowList?: string[];
   integrationBlockList?: string[];
   buttonId?: string;
-}
-
-export interface TrackstarConfig {
-  onClose?: () => void;
-  onLoad?: () => void;
-  getLinkToken: () => Promise<string>;
+  sandbox?: boolean;
 }
 
 interface TrackstarState {
@@ -19,7 +14,7 @@ interface TrackstarState {
 }
 
 export interface Trackstar {
-  init: (options: TrackstarConfig) => void;
+  init: (options: ClientConfig) => void;
   open: ({
     integrationId,
   }: {

@@ -58,7 +58,11 @@ function App() {
 ```
 ### Optional Props
 
-Use optional `integrationAllowList` and `integrationBlockList` props to determine the specific integrations to display. Both props take an string array of integration names.
+Use optional `integrationsWithEndpoints`, `integrationAllowList` and `integrationBlockList` props to determine the specific integrations to display. All three props take an string array of integration names.
+To only show integrations that support the `get_returns` and `create_return` endpoints use
+```jsx
+integrationsWithEndpoints={['get_returns', 'create_return']}
+```
 To only show ShipBob and Ongoing integrations use
 ```jsx
 integrationAllowList={['shipbob', 'ongoing']}

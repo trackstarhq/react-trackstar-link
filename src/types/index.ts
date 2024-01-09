@@ -5,6 +5,7 @@ export interface ClientConfig {
   getLinkToken: () => Promise<string>;
   integrationAllowList?: string[];
   integrationBlockList?: string[];
+  integrationsWithEndpoints: string[];
   buttonId?: string;
   sandbox?: boolean;
 }

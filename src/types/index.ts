@@ -9,7 +9,7 @@ export interface ClientConfig {
   getLinkToken: () => Promise<string>;
   integrationAllowList?: string[];
   integrationBlockList?: string[];
-  integrationsWithEndpoints: AllowedEndpoints[];
+  integrationsWithEndpoints?: AllowedEndpoints[];
   buttonId?: string;
   sandbox?: boolean;
 }

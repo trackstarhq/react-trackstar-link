@@ -39,14 +39,17 @@ function App() {
         const { linkToken } = await response.json();
         return linkToken;
       }}
-      onSuccess={(authCode) => 
-        await fetch('https://my-company.backend.com/store-token', {
-          method: 'POST',
-          body: JSON.stringify({
-            customer_id: someCustomerId,
-            auth_code: authCode,
-          }),
-        })
+      onSuccess={async (authCode) =>
+        // the endpoint you implemented in step 2.2
+        await fetch('https://my-company.backend.com/store-token',
+          {
+            method: 'POST',
+            body: JSON.stringify({
+              customer_id: someCustomerId,
+              auth_code: authCode,
+            }),
+          }
+        )
       }
       onClose={() => console.log('closed')}
       onLoad={() => console.log('loaded')}

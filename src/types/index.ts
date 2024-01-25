@@ -12,6 +12,7 @@ export interface ClientConfig {
   integrationsWithEndpoints?: AllowedEndpoints[];
   buttonId?: string;
   sandbox?: boolean;
+  logo?: string;
 }
 
 interface TrackstarState {

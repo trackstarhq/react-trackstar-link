@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import useScript from 'react-script-hook';
 
 import { ClientConfig } from './types';

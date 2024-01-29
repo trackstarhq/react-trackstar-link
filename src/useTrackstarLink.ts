@@ -9,19 +9,20 @@ export default function useTrackstarLink(config: ClientConfig) {
     checkForExisting: true,
   });
   const trackstarModalId = config.hasOwnProperty("buttonId") ? "Trackstar" + config.buttonId : "Trackstar";
-
-  useEffect(() => {
-    if (window.Trackstar) {
-      window.Trackstar.init({
-        ...config,
-        onLoad: () => {
-          config.onLoad && config.onLoad();
-        },
-        onClose: () => config.onClose && config.onClose(),
-        getLinkToken: () => config.getLinkToken && config.getLinkToken(),
-      });
-    }
-  }, [loading]);
+  if (typeof window !== 'undefined'){
+    useEffect(() => {
+      if (window.Trackstar) {
+        window.Trackstar.init({
+          ...config,
+          onLoad: () => {
+            config.onLoad && config.onLoad();
+          },
+          onClose: () => config.onClose && config.onClose(),
+          getLinkToken: () => config.getLinkToken && config.getLinkToken(),
+        });
+      }
+    }, [window.Trackstar]);
+  }
 
   const open = ({
     integrationId,

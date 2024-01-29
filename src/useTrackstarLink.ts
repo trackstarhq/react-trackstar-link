@@ -9,6 +9,7 @@ export default function useTrackstarLink(config: ClientConfig) {
     checkForExisting: true,
   });
   const trackstarModalId = config.hasOwnProperty("buttonId") ? "Trackstar" + config.buttonId : "Trackstar";
+  const modal = typeof window !== 'undefined' && window.Trackstar
 
   useEffect(() => {
     if (window.Trackstar) {
@@ -21,7 +22,7 @@ export default function useTrackstarLink(config: ClientConfig) {
         getLinkToken: () => config.getLinkToken && config.getLinkToken(),
       });
     }
-  }, [loading]);
+  }, [modal]);
 
   const open = ({
     integrationId,

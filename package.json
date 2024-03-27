@@ -1,6 +1,6 @@
 {
   "name": "@trackstar/react-trackstar-link",
-  "version": "2.0.9",
+  "version": "2.0.10",
   "description": "A React component to open the Trackstar Connect Modal",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",

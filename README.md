@@ -82,8 +82,5 @@ Set the `sandbox` prop to `true` to include a sandbox WMS in the list of integra
 
 Use the `buttonId` prop to use multiple instances of `<TrackstarConnectButton`. This is useful to have several buttons with different `integrationAllowList`'s to display. Each `<TrackstarConnectButton` will need its own unique string for `buttonId`.
 
-Set the `logo` prop to your logo URL to override the Trackstar logo and use your
-own.
-
 ### Issues/Questions
 Contact us at `support@trackstarhq.com`.

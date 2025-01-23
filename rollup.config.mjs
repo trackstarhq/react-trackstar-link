@@ -3,8 +3,8 @@ import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import terser from '@rollup/plugin-terser';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
-import ts from 'rollup-plugin-ts';
-import pkg from './package.json' assert { type: 'json' };
+import ts from '@rollup/plugin-typescript';
+import pkg from './package.json' with { type: 'json' };
 
 const EXTENSIONS = ['.ts', '.tsx', '.js', '.jsx'];
 

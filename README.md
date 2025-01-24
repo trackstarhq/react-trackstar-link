@@ -30,6 +30,7 @@ function App() {
   const someCustomerId = "12345";
   return (
     <TrackstarConnectButton
+      integrationType="wms"
       getLinkToken={async () => {
         const response = await fetch('https://my-company.backend.com/link-token',
           {
@@ -79,6 +80,9 @@ The `integrationAllowList` and `integrationBlockList` props are mutually exclusi
 Integration IDs that can be used in these props can be found in the table here: https://docs.trackstarhq.com/introduction#warehouse-management-systems
 
 Set the `sandbox` prop to `true` to include a sandbox WMS in the list of integrations. This is useful for testing.
+
+Set the `integrationType` prop to change the type of integration to connect to.
+The default is `wms`. The other options are `cart` and `freight`.
 
 Use the `buttonId` prop to use multiple instances of `<TrackstarConnectButton`. This is useful to have several buttons with different `integrationAllowList`'s to display. Each `<TrackstarConnectButton` will need its own unique string for `buttonId`.
 

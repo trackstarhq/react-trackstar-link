@@ -10,12 +10,28 @@ type TrackstarConnectButtonProps = {
 } & ClientConfig;
 
 export default function TrackstarConnectButton({
-  children = 'Connect WMS',
+  children = 'trackstar-default',
   style,
   className,
   ...config
 }: TrackstarConnectButtonProps) {
   const { error, open } = useTrackstarLink(config);
+  const formattedTypes = {
+    'wms': 'WMS',
+    'cart': 'Cart',
+    'freight': 'Freight Forwarder',
+  };
+  // update README if this changes. also eevee/TrackstarModal
+  var childrenToRender = children;
+  if (children === 'trackstar-default' && config.integrationType && config.integrationType in formattedTypes) {
+    const integrationType = config.integrationType as keyof typeof formattedTypes;
+    const formattedType = formattedTypes[integrationType];
+    childrenToRender = `Connect ${formattedType}`;
+  }
+  if (childrenToRender === 'trackstar-default') {
+    childrenToRender = 'Connect WMS';
+  }
+
 
   return (
     <button
@@ -33,7 +49,7 @@ export default function TrackstarConnectButton({
       }}
       onClick={async () => open({})}
     >
-      {children}
+      {childrenToRender}
     </button>
   );
 }

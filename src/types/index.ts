@@ -11,6 +11,7 @@ export interface ClientConfig {
   integrationBlockList?: string[];
   integrationsWithEndpoints?: AllowedEndpoints[];
   buttonId?: string;
+  integrationType?: string;
   sandbox?: boolean;
 }
 

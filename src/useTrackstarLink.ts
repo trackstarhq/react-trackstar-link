@@ -6,6 +6,7 @@ import { ClientConfig } from './types';
 export default function useTrackstarLink(config: ClientConfig) {
   const [loading, error] = useScript({
     src: "https://link.trackstarhq.com/main.js",
+    // src: "http://localhost:3005/main.js",
     checkForExisting: true,
   });
   const trackstarModalId = config.hasOwnProperty("buttonId") ? "Trackstar" + config.buttonId : "Trackstar";

@@ -23,7 +23,7 @@ export default function useTrackstarLink(config: ClientConfig) {
         getLinkToken: () => config.getLinkToken && config.getLinkToken(),
       });
     }
-  }, [modal, loading, error]);
+  }, [modal, loading, error, config]);
 
   const open = ({
     integrationId,

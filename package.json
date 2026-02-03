@@ -7,10 +7,7 @@
   "jsnext:main": "dist/index.esm.js",
   "browser": "dist/index.umd.js",
   "types": "dist/index.d.ts",
-  "publishConfig": {
-    "registry": "https://registry.npmjs.org",
-    "access": "public"
-  },
+  "registry": "https://registry.npmjs.org",
   "exports": {
     ".": "./dist/index.js"
   },

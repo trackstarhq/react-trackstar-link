@@ -1,13 +1,16 @@
 {
   "name": "@trackstar/react-trackstar-link",
-  "version": "2.0.20",
+  "version": "2.2.0",
   "description": "A React component to open the Trackstar Connect Modal",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "jsnext:main": "dist/index.esm.js",
   "browser": "dist/index.umd.js",
   "types": "dist/index.d.ts",
-  "registry": "https://registry.npmjs.org",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org",
+    "access": "public"
+  },
   "exports": {
     ".": "./dist/index.js"
   },

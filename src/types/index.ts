@@ -32,6 +32,6 @@ export interface Trackstar {
 declare global {
   interface Window {
     Trackstar: Trackstar;
-    [trackstarModalId: string]: Trackstar;
+    [key: `Trackstar${string}`]: Trackstar;
   }
 }

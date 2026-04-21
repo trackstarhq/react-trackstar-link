@@ -9,7 +9,7 @@ export default function useTrackstarLink(config: ClientConfig) {
     // src: "http://localhost:3005/main.js",
     checkForExisting: true,
   });
-  const trackstarModalId = config.hasOwnProperty("buttonId") ? "Trackstar" + config.buttonId : "Trackstar";
+  const trackstarModalId = (config.hasOwnProperty("buttonId") ? "Trackstar" + config.buttonId : "Trackstar") as `Trackstar${string}`;
   const modal = typeof window !== 'undefined' && window.Trackstar
 
   useEffect(() => {

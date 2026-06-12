@@ -12,10 +12,16 @@ export default function useTrackstarLink(config: ClientConfig) {
   const trackstarModalId = (config.hasOwnProperty("buttonId") ? "Trackstar" + config.buttonId : "Trackstar") as `Trackstar${string}`;
   const modal = typeof window !== 'undefined' && window.Trackstar
 
+  const close = () => window[trackstarModalId].close();
+
   useEffect(() => {
     if (window.Trackstar) {
       window.Trackstar.init({
         ...config,
+        // hand the consumer a `close` so they can dismiss the modal (e.g. from
+        // onSuccess) without reaching for the window global
+        onSuccess: (authCode, integrationName) =>
+          config.onSuccess(authCode, integrationName, close),
         onLoad: () => {
           config.onLoad && config.onLoad();
         },

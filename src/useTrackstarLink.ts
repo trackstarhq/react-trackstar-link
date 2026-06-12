@@ -12,7 +12,13 @@ export default function useTrackstarLink(config: ClientConfig) {
   const trackstarModalId = (config.hasOwnProperty("buttonId") ? "Trackstar" + config.buttonId : "Trackstar") as `Trackstar${string}`;
   const modal = typeof window !== 'undefined' && window.Trackstar
 
-  const close = () => window[trackstarModalId].close();
+  const close = () => {
+    if (!window[trackstarModalId]) {
+      console.error('Trackstar is not initialized');
+      return;
+    }
+    window[trackstarModalId].close();
+  };
 
   useEffect(() => {
     if (window.Trackstar) {

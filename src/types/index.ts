@@ -3,7 +3,7 @@ type AllowedEndpoints = "get_inventory" | "get_products" | "create_product" | "u
   | "get_shipping_methods" | "get_bills" | "get_warehouses" | "get_warehouse_customers" | "get_labor_activities";
 
 export interface ClientConfig {
-  onSuccess: (authCode: string, integrationName: string) => void;
+  onSuccess: (authCode: string, integrationName: string, close: () => void) => void;
   onClose?: () => void;
   onLoad?: () => void;
   getLinkToken: () => Promise<string>;
@@ -26,6 +26,7 @@ export interface Trackstar {
   }: {
     integrationId?: string;
   }) => void;
+  close: () => void;
   state: TrackstarState;
 }
 

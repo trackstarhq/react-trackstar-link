@@ -54,5 +54,6 @@ export default function useTrackstarLink(config: ClientConfig) {
   return {
     error,
     open,
+    close,
   };
 }

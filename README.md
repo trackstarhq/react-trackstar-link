@@ -86,5 +86,11 @@ The default is `wms`. The other options are `cart` and `freight`.
 
 Use the `buttonId` prop to use multiple instances of `<TrackstarConnectButton`. This is useful to have several buttons with different `integrationAllowList`'s to display. Each `<TrackstarConnectButton` will need its own unique string for `buttonId`.
 
+Use the `disabledFunctions` prop to turn off specific endpoints on connections created through this button. Pass a list of function names.
+```jsx
+disabledFunctions={['get_orders', 'get_returns']}
+```
+These are disabled *on top of* any endpoints your org already disables org-wide, so the prop can only add restrictions. For an endpoint that must never be reachable, also disable it at the org level rather than relying on the prop alone.
+
 ### Issues/Questions
 Contact us at `support@trackstarhq.com`.

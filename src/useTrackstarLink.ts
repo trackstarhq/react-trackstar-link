@@ -1,16 +1,39 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import useScript from 'react-script-hook';
 
 import { ClientConfig } from './types';
 
 export default function useTrackstarLink(config: ClientConfig) {
-  const [loading, error] = useScript({
+  const [, error] = useScript({
     src: "https://link.trackstarhq.com/main.js",
     // src: "http://localhost:3005/main.js",
     checkForExisting: true,
   });
   const trackstarModalId = (config.hasOwnProperty("buttonId") ? "Trackstar" + config.buttonId : "Trackstar") as `Trackstar${string}`;
-  const modal = typeof window !== 'undefined' && window.Trackstar
+
+  // useScript's loading flag can get stuck: when another instance already added
+  // the <script>, a late-mounting instance attaches its load listener after the
+  // event fired and never re-renders, so init() below never runs. Watch for
+  // window.Trackstar ourselves and re-render once main.js has set it.
+  const [trackstarReady, setTrackstarReady] = useState(
+    typeof window !== 'undefined' && Boolean(window.Trackstar)
+  );
+  useEffect(() => {
+    if (trackstarReady || error || typeof window === 'undefined') {
+      return;
+    }
+    if (window.Trackstar) {
+      setTrackstarReady(true);
+      return;
+    }
+    const intervalId = window.setInterval(() => {
+      if (window.Trackstar) {
+        window.clearInterval(intervalId);
+        setTrackstarReady(true);
+      }
+    }, 50);
+    return () => window.clearInterval(intervalId);
+  }, [trackstarReady, error]);
 
   const close = () => {
     if (!window[trackstarModalId]) {
@@ -35,7 +58,7 @@ export default function useTrackstarLink(config: ClientConfig) {
         getLinkToken: () => config.getLinkToken && config.getLinkToken(),
       });
     }
-  }, [modal, loading, error, config]);
+  }, [trackstarReady, error, config]);
 
   const open = ({
     integrationId,

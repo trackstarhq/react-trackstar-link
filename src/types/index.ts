@@ -10,8 +10,6 @@ export interface ClientConfig {
   integrationAllowList?: string[];
   integrationBlockList?: string[];
   integrationsWithEndpoints?: AllowedEndpoints[];
-  /** @deprecated ignored; disabling endpoints is no longer supported */
-  disabledFunctions?: string[];
   buttonId?: string;
   integrationType?: string;
   sandbox?: boolean;

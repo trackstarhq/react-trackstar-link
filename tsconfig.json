@@ -10,7 +10,7 @@
     "forceConsistentCasingInFileNames": true,
     "declaration": true,
     "outDir": "./dist",
-    "removeComments": false
+    "removeComments": true
   },
   "include": ["./src"],
   "exclude": ["node_modules"]
